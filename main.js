@@ -8,8 +8,19 @@ function calculateAmortization(){
 
     console.log(initialLoanAmount, downPayment, loanTerm);
     
+    // Simple Error Handling
     if(loanTerm != 15 && loanTerm != 30){
         window.alert("You entered an invalid loan term, please enter either 15 or 30 years");
+        return;
+    }
+
+    if(initialLoanAmount < 0){
+        window.alert("You need to enter a loan amount greater than 0");
+        return;
+    }
+
+    if(downPayment > 100){
+        window.alert("You entered a dowm payment percentage above 100, please enter a value that is greater than 0 but less than 100");
         return;
     }
 
